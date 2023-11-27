@@ -1,3 +1,7 @@
 .header .header__icon {
   width: 30px;
 }
+
+.product-grid .grid__item {
+  border-bottom: 0.5px solid #353941;
+}
