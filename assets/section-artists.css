@@ -1,0 +1,36 @@
+.artists {
+  margin: 40px 0 20px;
+  border-top: 0.5px solid #B4B2B2;
+  border-bottom: 0.5px solid #B4B2B2;
+  padding: 20px 0 20px 22px;
+}
+
+.artists__heading {
+  font-family: Greyst;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.artist__image {
+  width: 65px;
+  height: 65px;
+}
+
+.artist__name {
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+}
+
+.artist-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 65px;
+}
+
+.artists-swiper .swiper-slide {
+  text-align: center;
+}

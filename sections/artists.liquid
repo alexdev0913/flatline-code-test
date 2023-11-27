@@ -1,0 +1,44 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+{{ 'section-artists.css' | asset_url | stylesheet_tag }}
+
+<section class="artists">
+  <div class="artists__heading">{{ section.settings.heading }}</div>
+  <div class="artists-swiper swiper">
+    <div class="swiper-wrapper">
+      {% for artist in collection.metafields.custom.artists.value %}
+        <div class="swiper-slide">
+          {{ artist.image | image_url: width: 130, height: 130 | image_tag: alt: artist.name.value, class: "artist__image" }}
+          <div class="artist__name">
+            {{ artist.name }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" async></script>
+<script src="{{ 'artists.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Artists",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Meet our artist",
+      "label": "Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Artists"
+    }
+  ]
+  }
+{% endschema %}
